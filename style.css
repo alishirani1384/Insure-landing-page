@@ -1,0 +1,114 @@
+:root{
+    --body-font:'Karla', sans-serif;
+    --header-font:'DM Serif Display', serif;
+    --Dark-Violet: hsl(256, 26%, 20%);
+    --Grayish-Blue: hsl(216, 30%, 68%);
+    --Very-Dark-Violet: hsl(270, 9%, 17%);
+    --Dark-Grayish-Violet: hsl(273, 4%, 51%);
+    --Very-Light-Gray: hsl(0, 0%, 98%);
+}
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: var(--body-font);
+}
+header{
+    background-color: var(--Very-Light-Gray);
+}
+nav{
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+.container{
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.nav-links{
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    list-style: none;
+}
+.nav-link{
+    text-transform: uppercase;
+    font-size: 16px;
+    cursor: pointer;
+    color: var(--Dark-Grayish-Violet);
+    font-weight: 700;
+}
+.nav-link:hover{
+    color: var(--Very-Dark-Violet);
+    transition: color .3s;
+}
+.nav-link button{
+    text-transform: uppercase;
+    padding: .5rem 1.5rem;
+    background-color: transparent;
+    border: 2px solid var(--Very-Dark-Violet);
+    font-weight: 700;
+    cursor: pointer;
+}
+.nav-link button:hover{
+    background-color: var(--Very-Dark-Violet);
+    color: var(--Very-Light-Gray);
+    transition: all .3s;
+}
+.menu-btn{
+    display: none;
+}
+
+
+@media screen and (max-width:1200px) {
+    .container{
+        padding-inline: 1rem;
+    }
+}
+
+
+@media screen and (max-width:600px) {
+    .nav-links{
+        position: absolute;
+        transform: translateX(-1000px);
+        top: 80px;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: var(--Very-Dark-Violet);
+        display: flex;
+        flex-direction: column;
+        padding: 4rem 0 0 0;
+        gap: 3rem;
+    }
+    .active{
+        transform: translateX(0);
+        transition: transform .3s;
+    }
+    .nav-link{
+        color: var(--Very-Light-Gray);
+        font-size: 1.5rem;
+    }
+    .nav-link:hover{
+        color: var(--Very-Light-Gray);
+    }
+    .nav-link button{
+        color: var(--Very-Light-Gray);
+        border-color: var(--Very-Light-Gray);
+        font-size: 1.3rem;
+        padding: 1rem 6rem;
+    }
+    .menu-btn{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: none;
+        background-color: transparent;
+        cursor: pointer;
+    }
+}
