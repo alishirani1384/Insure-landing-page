@@ -6,7 +6,9 @@ menuBtn.addEventListener("click", () => {
     menu.classList.toggle("active");
     if (menu.classList.contains("active")) {
         icon.src = './images/icon-close.svg';
+        document.body.style.overflow = "hidden";
     } else {
         icon.src = "./images/icon-hamburger.svg";
+        document.body.style.overflow = "auto";
     }
 })
